@@ -11,3 +11,23 @@
 - `git commit -m "Commit Message"` commits a change to your Git repository.
 - `git push -u origin main` pushes you commit to the Git repository.
 - `git log` shows you everything you've done in the repository so far, the commits and the changes.
+
+### Connecting Penpot to Antigravity (MCP Setup)
+
+#### 1. Generate Penpot MCP Token
+1. Open Penpot → click **Profile icon** → **Your account** → **Integrations**.
+2. Toggle **MCP Server** to **Enabled** and generate your token.
+3. Copy the token.
+
+#### 2. Configure Antigravity (`mcp_config.json`)
+1. Open the **Agent** panel on the right (`Ctrl+L` or `Ctrl+Shift+I`), click **`...`** → **MCP Servers** → **Manage MCP Servers** → **View raw config**.
+2. Add the Penpot endpoint using `"serverUrl"` (not `"url"`):
+
+```json
+{
+  "mcpServers": {
+    "penpot": {
+      "serverUrl": "[https://design.penpot.app/mcp/stream?userToken=yourmcpkey:)](https://design.penpot.app/mcp/stream?userToken=yourmcpkey:))"
+    }
+  }
+}
